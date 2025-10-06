@@ -1,0 +1,19 @@
+{
+  "name": "hello-prisma",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.16.3",
+    "@types/node": "^24.7.0",
+    "prisma": "^6.16.3",
+    "tsx": "^4.20.6"
+  }
+}
