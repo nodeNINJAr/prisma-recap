@@ -19,7 +19,7 @@ async function main() {
 
 
 
-// retrived all data
+//** */ retrived all data
 // const result = await prisma.users.findMany();
 
 // retrived data by conditions
@@ -42,18 +42,65 @@ async function main() {
 // console.log(userData);
 
 // find unique and throw error
-const userData = await prisma.users.findUniqueOrThrow({
+// const userData = await prisma.users.findUniqueOrThrow({
+//   where:{
+//     id:4
+//   }
+// })
+
+// console.log(userData);
+
+
+// ** Update 
+
+
+// ** update single data
+// const updatedUser = await prisma.users.update({
+//   where:{
+//     id:1
+//   },
+//   data:{
+//     name: "Sm Mehedi Hasan1"
+//   }
+// })
+
+// console.log(updatedUser);
+
+// ** update many data updateManyAndReturn/updateMany
+// const updateProfilePhoto = await prisma.users.updateManyAndReturn({
+//    where:{
+//       profilePhoto:null
+//    },
+//    data:{
+//        profilePhoto:"https://programming-hero.com/level2/default-image.png"
+//    }
+// })
+ 
+// console.log("updated data", updateProfilePhoto);
+
+// ** delete
+
+// deleted one
+// const deletedUser = await prisma.users.delete({
+//   where:{
+//     id:1
+//   }
+// })
+
+// console.log("Deleted Id", deletedUser);
+
+const deletedUsers = await prisma.users.deleteMany({
   where:{
-    id:4
+    id:{
+      lt:3 
+    }
   }
 })
 
-console.log(userData);
-
-
-
-
+console.log("Deleted Id", deletedUsers);
 
 }
+
+
 
 main()
